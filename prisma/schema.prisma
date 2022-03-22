@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+model Doctor {
+  id			    Int			@id @default(autoincrement())
+  first_name	String		@db.VarChar(50)
+  last_name		String		@db.VarChar(50)
+  phone_num		String		@db.VarChar(14) @unique
+  email			  String		@db.VarChar(255) @unique
+  created_at 	DateTime 	@default(now())
+  modified_at	DateTime	@default(now())
+  is_active		Boolean		@default(true)
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
