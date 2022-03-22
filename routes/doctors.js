@@ -6,4 +6,6 @@ const DoctorController = require('../services/doctor/controllers/DoctorControlle
 /* GET users listing. */
 router.get('/', DoctorController.fetchDoctors);
 
+router.post('/', DoctorController.addDoctor);
+
 module.exports = router;

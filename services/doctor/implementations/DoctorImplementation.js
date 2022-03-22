@@ -9,9 +9,6 @@ const DoctorImplementation = function () {
            
             let data
 
-            // For temporaty insertions purpose (Dev)
-            // await DocModel.insertDoctorInfo(params)
-
             // Calling the model layer
             data = await DocModel.fetchAllDoctors(params)
             
@@ -19,6 +16,19 @@ const DoctorImplementation = function () {
             
             // Return the data
             return data
+        } catch (e) {
+            // Logging for the time being
+            console.log(e)
+
+            // Should be passed to the Error Handeller Middleware for debugging with next(e)
+            next(e)
+        }
+    }
+
+    this.insertDoctorsImplementation = async (params, next) => {
+        try{
+            // For temporaty insertions purpose (Dev)
+            return await DocModel.insertDoctorInfo(params)
         } catch (e) {
             // Logging for the time being
             console.log(e)

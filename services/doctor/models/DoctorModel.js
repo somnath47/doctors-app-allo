@@ -34,20 +34,22 @@ const DoctorModel = function () {
 
     // ***************************************************************
     // For Developemnt Purpose only
-    // this.insertDoctorInfo = async params => {
-    //     await prisma.doctor.create({
-    //         data: {
-    //             first_name: "Dr. Sumit",
-    //             last_name: "Panday",
-    //             phone_num: "+919232661325",
-    //             email: "somnath.ghosh2011@gmail.com"
-    //         }
-    //     })
+    this.insertDoctorInfo = async data => {
+        await prisma.doctor.create({
+            data: data
+        })
 
-    //     return true
-    // }
+        return true
+    }
     // ***************************************************************
 
+
+    // {
+    //     first_name: "Dr. Sumit",
+    //     last_name: "Panday",
+    //     phone_num: "+919232661325",
+    //     email: "somnath.ghosh2011@gmail.com"
+    // }
 }
 
 module.exports = new DoctorModel()
