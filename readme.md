@@ -69,6 +69,7 @@ Doctors APP
         GET
 
 	Success Status: 200 (Implemented)
+	
 	Validation/Authorization Error: 4xx (Not Implemented)
 
     Sample Response:
